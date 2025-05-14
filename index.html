@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigasi Kampus UIN Jakarta</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <img src="assets/uin-logo.png" alt="Logo UIN Jakarta" class="logo">
+    <div class="header-text">
+      <h1>Sistem Navigasi Kampus</h1>
+      <h2>UIN Syarif Hidayatullah Jakarta</h2>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="search-section">
+      <div class="input-container">
+        <div class="input-group">
+          <label for="start-point">Lokasi Asal</label>
+          <div class="search-wrapper">
+            <input type="text" id="start-point" placeholder="Cari lokasi asal..." autocomplete="off">
+            <div id="start-suggestions" class="suggestions"></div>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="end-point">Lokasi Tujuan</label>
+          <div class="search-wrapper">
+            <input type="text" id="end-point" placeholder="Cari lokasi tujuan..." autocomplete="off">
+            <div id="end-suggestions" class="suggestions"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button id="route-button" class="route-button">
+          <i class="icon-route"></i> Tampilkan Rute
+        </button>
+        <button id="reset-button" class="secondary-button">
+          <i class="icon-reset"></i> Reset
+        </button>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div id="map"></div>
+      <div class="map-controls">
+        <button id="locate-button" class="map-control-button" title="Lokasi Saya">
+          <i class="icon-locate"></i>
+        </button>
+        <button id="zoom-in-button" class="map-control-button" title="Perbesar">
+          <i class="icon-zoom-in"></i>
+        </button>
+        <button id="zoom-out-button" class="map-control-button" title="Perkecil">
+          <i class="icon-zoom-out"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="directions-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="icon-directions"></i> Petunjuk Arah
+        </h2>
+        <div class="route-summary" id="route-summary"></div>
+      </div>
+      <div id="directions" class="directions-panel"></div>
+    </section>
+  </main>
+<div id="route-summary"></div>
+<div id="directions"></div>
+<div id="alternative-routes"></div>
+<!-- Other required elements -->
+  <footer class="footer">
+    <p>© 2023 Pusat Sistem Informasi - UIN Syarif Hidayatullah Jakarta</p>
+    <p class="version">Versi 2.1.0</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js" type="module"></script>
+  <div id="boundary-warning" class="boundary-warning">
+  <p>Pencarian hanya tersedia di area Kampus UIN Jakarta</p>
+</div>
+</body>
+</html>
