@@ -249,9 +249,9 @@ class CampusNavigator {
     }).addTo(this.map);
 
     // Tambahkan zoom control
-    L.control.zoom({
-      position: 'topright'
-    }).addTo(this.map);
+    // L.control.zoom({
+    //   position: 'topright'
+    // }).addTo(this.map);
   }
 
   initDOM() {
